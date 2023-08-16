@@ -26,7 +26,7 @@ const adminRoutes = express.Router();
 
 adminRoutes.get("/students", authenticateToken, loadStudentsData);
 adminRoutes.get("/tutors", loadTutorsData);
-adminRoutes.get("/course", authenticateToken, getAllCourseData);
+adminRoutes.get("/course", getAllCourseData);
 adminRoutes.post("/student/block", authenticateToken, studentBlock);
 adminRoutes.get("/requests", authenticateToken, loadRequests);
 adminRoutes.post("/accept_req", authenticateToken, acceptRequest);

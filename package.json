@@ -5,12 +5,12 @@
   "description": "MERN authentication system",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Brad Traversy",
+  "author": " ",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.1",
