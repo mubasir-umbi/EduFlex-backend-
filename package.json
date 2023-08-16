@@ -2,8 +2,11 @@
   "name": "eduflex",
   "version": "1.0.0",
   "type": "module",
-  "description": "MERN authentication system",
+  "description": "MERN ",
   "main": "server.js",
+  "engines": {
+    "node": "14.20.1"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
