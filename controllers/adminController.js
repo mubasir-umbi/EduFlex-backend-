@@ -6,7 +6,6 @@ import asyncHandler from 'express-async-handler'
 
 const loadStudentsData = asyncHandler(async (req, res) => {
     const usersData = await User.find({isAdmin : false})
-    console.log(usersData);
 
     if(usersData){
         res.json( usersData )
