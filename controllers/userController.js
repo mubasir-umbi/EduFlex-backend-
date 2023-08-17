@@ -101,7 +101,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
 
 const updateUserProfile = asyncHandler(async (req, res) => {
 
-  // console.log(req.cookies, 'am upadddddddddddddddddddddd');
   const user = await User.findById(req.user._id);
 
   if (user) {

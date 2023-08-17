@@ -42,7 +42,7 @@ tutorRoutes.get("/delete_lesson",  authenticateToken, deleteLesson);
 tutorRoutes.get("/my_students",  authenticateToken, myStudents);
 tutorRoutes.get("/dashboard",  authenticateToken, dashBoardData);
 tutorRoutes.put("/edit_profile",  authenticateToken, updateProfile);
-tutorRoutes.get("/chats",  authenticateToken, loadChats);
+tutorRoutes.get("/chats", loadChats);
 
 
 export default tutorRoutes;
