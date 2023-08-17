@@ -7,15 +7,10 @@ import Conversation from "../models/ConversationModel.js";
 
 const createChat = asyncHandler(async (req, res) => {
   try {
-    console.log(conversation, 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj');
-    const { conversation, sender, message } = req.body;
+    const { conversation, sender, message } = req?.body;
 
     let newChat = new Chat({ conversation, sender, message });
     await newChat.save();
-
-    // newChat = await newChat.populate('sender', '_id')
-    // newChat = await newChat.populate('message')
-    console.log(newChat, "::::::::::::::::::::::::");
     res.status(201).json(newChat);
   } catch (error) {
     console.log(error);
@@ -26,7 +21,7 @@ const createChat = asyncHandler(async (req, res) => {
 
 const getChat = asyncHandler(async (req, res) => {
   try {
-    const id = req.query.id;
+    const id = req.query?.id;
 
     const messages = await Chat.find({ conversation: id })
       .populate("sender", "-password")
@@ -40,9 +35,7 @@ const getChat = asyncHandler(async (req, res) => {
 });
 
 const loadChats = asyncHandler(async (req, res) => {
-  const id = req.query.id;
-
-  console.log(id, '////////////////////////////////');
+  const id = req?.query?.id;
 
   const chatList = await Conversation.find({
     participants: {
@@ -65,7 +58,6 @@ const loadChats = asyncHandler(async (req, res) => {
       }
     }
   }
- console.log(users, 'usersssss');
   res.json(users);
 });
 

@@ -59,7 +59,6 @@ const myEnrolledCourseData = asyncHandler(async(req, res) => {
     const course = await EnrolledCourse.find({userId}).populate('courseId')
     
     const enrolledCourses = course.map(enrollment => enrollment.courseId);
-    console.log(enrolledCourses, 'enrolled course');
     res.json(enrolledCourses);
   } catch (error) {
     console.log(error);
