@@ -15,6 +15,17 @@ const authUser = asyncHandler(async (req, res) => {
     if(!user.isBlocked){
      const token = generateToken(res, user._id);
 
+     console.log({
+      token : token,
+      _id: user._id,
+      fName: user.fName,
+      lName: user.lName,
+      isVerified: user.isVerified,
+      isBlocked: user.isBlocked,
+      isAdmin: user.isAdmin,
+      email: user.email,
+    }, 'USERRRRRRRRRRRRRRRRRRRRRRRRRRR');
+
     res.status(201).json({
       token : token,
       _id: user._id,

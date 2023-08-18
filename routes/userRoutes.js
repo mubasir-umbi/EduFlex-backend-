@@ -45,6 +45,7 @@ import {
   deleteReply,
   updateReply,
 } from "../controllers/replyController.js";
+import { getUserProgressForCourse, markLessonCompleted } from "../controllers/userProgressController.js";
 
 
 
@@ -61,9 +62,11 @@ router.get("/course/popular", getPopularCourseData);
 router.get("/course/view", getSingleCourseData);
 router.get("/course/category", getCourseByCategory);
 router.post("/payment", authenticateToken, saveEnrolledCourseData);
-router.get("/my_courses", authenticateToken, myEnrolledCourseData);
+router.get("/my_courses",  myEnrolledCourseData);
 router.get("/course_review", getCourseReviews);
 router.get("/search_course", getCourseBySearch);
+router.get("/progress", getUserProgressForCourse);
+router.post("/progress", markLessonCompleted);
 
 router
   .route("/reply")
